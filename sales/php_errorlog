@@ -1,0 +1,60 @@
+[15-Jul-2024 07:13:21 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:13:28 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:16:14 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:16:21 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:17:18 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:17:39 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:17:41 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:18:00 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:19:15 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
+[15-Jul-2024 07:19:17 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php:8
+Stack trace:
+#0 /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php(8): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'keen_crm')
+#1 /home/customer/www/jamesl571.sg-host.com/public_html/sales/index.php(62): include_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/jamesl571.sg-host.com/public_html/sales/php/config.php on line 8
