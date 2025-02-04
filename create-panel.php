@@ -180,6 +180,10 @@ data-state="<?php echo $user_row["state"] ?>"
 data-country="<?php echo $user_row["country"] ?>"
 data-zipcode="<?php echo $user_row["zipcode"] ?>"
 data-profile="<?php echo $user_row["profile"] ?>"
+data-subrole="<?php echo $user_row["subrole"] ?>"
+data-profilerole="<?php echo $user_row["role"] ?>"
+
+
 >
 					<i class="ti ti-edit text-blue"></i> Edit</a>
 					<!-- <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_contact" data-userid="<?php echo $user_row["id"] ?>" data-username="<?php echo $user_row["name"] ?>"><i class="ti ti-trash text-danger"></i> Delete</a> -->
@@ -282,11 +286,7 @@ data-profile="<?php echo $user_row["profile"] ?>"
 <div class="form-wrap">
 <div class="d-flex justify-content-between align-items-center">
 <label class="col-form-label">Email <span class="text-danger">*</span></label>
-<div class="status-toggle small-toggle-btn d-flex align-items-center">
-<span class="me-2 label-text">Email Opt Out</span>
-<input type="checkbox" id="user" class="check" checked>
-<label for="user" class="checktoggle"></label>
-</div>
+
 </div>
 <input type="text" class="form-control" name="email" required>
 </div>
@@ -305,15 +305,7 @@ data-profile="<?php echo $user_row["profile"] ?>"
 </div>
 
 
-<div class="col-md-6">
-<div class="form-wrap">
-<label class="col-form-label">Date of Birth</label>
-<div class="icon-form-end">
-<span class="form-icon"><i class="ti ti-calendar-event"></i></span>
-<input type="text" class="form-control datetimepicker" name="dob" required>
-</div>
-</div>
-</div>
+
 <div class="col-md-6">
 <div class="form-wrap mb-wrap">
 <label class="col-form-label">Role/Position</label>
@@ -333,6 +325,10 @@ if ($num>0) {
  ?>
 </select>
 </div>
+<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" name="assignable"  value="1">
+									<label class="form-check-label" for="flexSwitchCheckDefault">Assignable</label>
+								</div>
 </div>
 
 
@@ -879,6 +875,10 @@ if ($num>0) {
     var country = $(e.relatedTarget).data('country');
     var zipcode = $(e.relatedTarget).data('zipcode');
     var profile = $(e.relatedTarget).data('profile');
+     var profilerole = $(e.relatedTarget).data('profilerole');
+    console.log(profilerole);
+    var subrole = $(e.relatedTarget).data('subrole');
+
 
     $(e.currentTarget).find('input[name="name"]').val(name);
     $(e.currentTarget).find('input[name="lname"]').val(lname);
@@ -901,8 +901,44 @@ if ($num>0) {
     $(e.currentTarget).find('div[class="country"]').val(country);
     $(e.currentTarget).find('input[name="zipcode"]').val(zipcode);
     $(e.currentTarget).find('input[name="profile"]').val(profile);
-});
+     $(e.currentTarget).find('select[name="role"]').val(profilerole);
+    $(e.currentTarget).find('input[name="subrole"]').val(subrole);
+  
+    });
+
 </script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#edit-po').on('show.bs.modal', function (e) {
+            // ✅ PHP se fetched value ko JS me lena
+            var subrole = $(e.relatedTarget).data('subrole');
+
+            console.log("Subrole Value:", subrole); // Debugging ke liye check karein
+
+            // ✅ Checkbox ko set karna (1 -> Checked, 0 -> Unchecked)
+            $('#subroleCheckbox').prop('checked', subrole == 1);
+
+            // ✅ Subrole Status ko text me dikhana
+            $('#subroleText').text(subrole == 1 ? "Enabled" : "Disabled");
+
+            // ✅ Event Binding: Directly bind change event
+            $('#subroleCheckbox').on('change', function () {
+                var newSubrole = this.checked ? 1 : 0;  // Update subrole on change
+                console.log("Updated Subrole Value:", newSubrole);
+
+                // ✅ Update Text after change
+                $('#subroleText').text(newSubrole == 1 ? "Enabled" : "Disabled");
+
+                // ✅ Update the value for further processing (if needed)
+                $(this).val(newSubrole);  // Change value to reflect the checkbox state
+            });
+        });
+    });
+</script>
+
+
 
 <script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 

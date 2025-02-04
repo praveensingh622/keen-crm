@@ -17,7 +17,10 @@ if (isset($_SESSION['name'])) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Keeninsite-CRM</title>
+<title>Keeninsite-CRM
+
+
+</title>
 <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 <script src="https://cdn.tiny.cloud/1/v6edcpl9bl0acbvq9pl684uq2qeh0ienjq9istj802ofpl78/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
@@ -65,6 +68,7 @@ if (isset($_SESSION['name'])) {
 <div class="row align-items-center">
 <div class="col-4">
 <h4 class="page-title">Tasks<span class="count-title">
+
 	<?php
 	include_once("php/config.php");
 $sql_panel = "SELECT * FROM task WHERE status='pending'";
@@ -586,6 +590,7 @@ while ($row_find_user=mysqli_fetch_assoc($result)) {
 <div class="sidebar-layout">
 <div class="sidebar-header">
 <h4>Add New Task</h4>
+
 <a href="#" class="sidebar-close toggle-btn"><i class="ti ti-x"></i></a>
 </div>
 <div class="toggle-body">

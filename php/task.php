@@ -10,7 +10,7 @@ $task = rand(1000000, 9999999999);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php'; // PHPMailer installed via Composer
+require '../vendor/autoload.php'; 
 
 if (isset($_POST['submit'])) {
     $username12 = $_SESSION['name'];
@@ -20,7 +20,8 @@ if (isset($_POST['submit'])) {
     $due_date = $_POST['due_date'];
     $priority = $_POST['priority'];
     $status = $_POST['status'];
-    $description = mysqli_real_escape_string($conn, trim($_POST['description']));
+    $description_core = mysqli_real_escape_string($conn, trim($_POST['description']));
+    $description = nl2br($description_core);
     $repeat_interval = $_POST['interval'];
     $user_assign = count($_POST['user_assign']);
     $task_category_id = $_POST['task_cateogry'];
@@ -273,12 +274,21 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>';
-// function make_image_urls_absolute($content) {
-//     $base_url = "https://jamesl571.sg-host.com"; // Aapke server ka base URL
-//     return preg_replace('/src="(?!http)([^"]+)"/', 'src="' . $base_url . '/$1"', $content);
-// }
-// $base_url = "https://jamesl571.sg-host.com";
-// $description = make_image_urls_absolute($description);
+
+
+function base_url() {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+    return $protocol . "://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . "/";
+}
+
+
+
+function make_image_urls_absolute($content, $base_url) {
+   
+    return preg_replace('/src="(?!http)([^"]+)"/', 'src="' . $base_url . '/$1"', $content);
+}
+$base_url = base_url();
+$description = make_image_urls_absolute($description, $base_url);
    
    $date = date("d-m-Y");
 

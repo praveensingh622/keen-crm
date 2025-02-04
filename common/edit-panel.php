@@ -3,11 +3,11 @@
 <div class="sidebar-layout">
 <div class="sidebar-header">
 <h4>Edit Contact</h4>
-<a href="#" class="sidebar-close1 toggle-btn"><i class="ti ti-x"></i></a>
+<a href="create-panel.php" class="sidebar-close1 toggle-btn"><i class="ti ti-x"></i></a>
 </div>
 <div class="toggle-body">
 <div class="pro-create" id="edit-po">
-<form action="php/edit-panel.php" method="POST">
+<form action="php/edit-panel.php" method="POST" enctype="multipart/form-data">
 <div class="accordion-lists" id="list-accords">
 
 <div class="user-accordion-item">
@@ -28,7 +28,7 @@
 <div class="profile-upload-content">
 <label class="profile-upload-btn">
 <i class="ti ti-file-broken"></i> Upload File
-<input type="file" class="input-img" name="profile">
+<input type="file" class="input-img" name="image">
 </label>
 <p>JPG, GIF or PNG. Max size of 800K</p>
 </div>
@@ -76,11 +76,7 @@
 <div class="form-wrap">
 <div class="d-flex justify-content-between align-items-center">
 <label class="col-form-label">Email <span class="text-danger">*</span></label>
-<div class="status-toggle small-toggle-btn d-flex align-items-center">
-<span class="me-2 label-text">Email Opt Out</span>
-<input type="checkbox" id="user2" class="check" checked>
-<label for="user2" class="checktoggle"></label>
-</div>
+
 </div>
 <input type="text" name="email" class="form-control" >
 </div>
@@ -98,29 +94,29 @@
 </div>
 </div>
 
-<div class="col-md-6">
-<div class="form-wrap">
-<label class="col-form-label">Date of Birth</label>
-<div class="icon-form-end">
-<span class="form-icon"><i class="ti ti-calendar-event"></i></span>
-<input type="text" class="form-control datetimepicker" value="29-02-2020">
-</div>
-</div>
-</div>
 
 
 <div class="col-md-6">
 <div class="form-wrap">
 <label class="col-form-label">Role/Position <span class="text-danger">*</span></label>
-<select class="select2">
-<option>Choose</option>
-<option selected>Phone Calls</option>
-<option>Social Media</option>
-<option>Referral Sites</option>
-<option>Web Analytics</option>
-<option>Previous Purchases</option>
+ <select class="select" name="role">
+
+<?php 
+$sql = "SELECT * FROM role";
+$result = mysqli_query($conn, $sql);
+$num = mysqli_num_rows($result);
+if ($num>0) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		echo "<option value=".$row["role_id"].">";
+		echo $row["role_name"];
+		echo "</option>";
+	}
+}
+ ?>
 </select>
 </div>
+<input class="form-check-input" type="checkbox" name="subrole" id="subroleCheckbox"> Assignable
+
 </div>
 
 <div class="col-md-12">
@@ -245,7 +241,7 @@
 									</div>
 </div>
 <div class="submit-button text-end">
-<a href="#" class="btn btn-light sidebar-close1">Cancel</a>
+<a href="create-panel.php" class="btn btn-light sidebar-close1">Cancel</a>
 <button type="submit" name="submit" class="btn btn-primary">Save Changes</a>
 </div>
 </form>
@@ -253,3 +249,8 @@
 </div>
 </div>
 </div>
+
+
+
+
+

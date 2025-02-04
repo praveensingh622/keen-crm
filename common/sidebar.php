@@ -26,14 +26,28 @@ $job_ti = $_SESSION['job_title'];
 <li>
 <h6 class="submenu-hdr">Panel Managements</h6>
 <ul>
-<li class="submenu">
+<li class="submenu <?php echo ($current_page == 'create-panel.php') ? 'active' : ''; ?>">
 <a href="javascript:void(0);" class="subdrop">
-<i class="ti ti-layout-2"></i><span>Panels</span><span class="menu-arrow"></span>
+<i class="ti ti-layout-2"></i><span>Employee Panels</span><span class="menu-arrow"></span>
 </a>
 <ul>
-<li><a href="create-panel.php" class="<?php echo ($current_page == 'create-panel.php') ? 'active' : ''; ?>">Create Panel</a></li>
+<li><a href="create-panel.php" class="<?php echo ($current_page == 'create-panel.php') ? 'active' : ''; ?>">Create Employee Panel</a></li>
 </ul>
 </li>
+
+
+
+
+<li class="submenu <?php echo ($current_page == 'client.php') ? 'active' : ''; ?>">
+<a href="javascript:void(0);" class="subdrop">
+<i class="ti ti-layout-2"></i><span>Clinet Panels</span><span class="menu-arrow"></span>
+</a>
+<ul>
+<li><a href="client.php" class="<?php echo ($current_page == 'client.php') ? 'active' : ''; ?>">Create Client Panel</a></li>
+</ul>
+</li>
+
+
 </ul>
 </li>
 <li>
@@ -52,9 +66,9 @@ $job_ti = $_SESSION['job_title'];
 <a href="leads.php" class="<?php echo ($current_page == 'leads.php') ? 'active' : ''; ?>"><i class="ti ti-chart-arcs"></i><span>Leads</span></a>
 </li>
 
-<li>
+<!-- <li>
 <a href="client.php" class="<?php echo ($current_page == 'client.php') ? 'active' : ''; ?>"><i class="ti ti-brand-campaignmonitor"></i><span>Add Client</span></a>
-</li>
+</li> -->
 <li>
 <a href="project.php" class="<?php echo ($current_page == 'project.php') ? 'active' : ''; ?>"><i class="ti ti-atom-2"></i><span>Projects</span></a>
 </li>
@@ -74,6 +88,26 @@ $job_ti = $_SESSION['job_title'];
 			
 		</ul>
 </li>
+
+
+
+
+<li class="submenu">
+	<a href="javascript:void(0);" class=""><i class="ti ti-brand-databricks"></i><span>SEO</span><span class="menu-arrow"></span></a>
+		<ul style="display: none;">
+			<li><a href="seo-add-project.php" class="<?php echo ($current_page == 'seo-add-project.php') ? 'active' : ''; ?>">Add SEO Project</a></li>
+			
+			<li><a href="final-seo-report.php" class="<?php echo ($current_page == 'final-seo-report.php') ? 'active' : ''; ?>">All SEO List</a></li>
+			
+			
+			
+		</ul>
+</li>
+
+
+
+
+
 <li>
 <a href="task-by-projects.php" class="<?php echo ($current_page == 'task-by-projects.php') ? 'active' : ''; ?>"><i class="ti ti-list-check"></i><span>Tasks By Projects</span></a>
 </li>

@@ -43,11 +43,58 @@ if (isset($_SESSION['name'])) {
 
 <link rel="stylesheet" href="assets/css/style.css">
 <style type="text/css">
+    .form-control {
+    border-color: #ffffff !important;
+    color: #6F6F6F;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    border-radius: 5px;
+    padding: 0.5rem 0.85rem;
+    /* box-shadow: 0px 4px 4px 0px rgba(219, 219, 219, 0.2509803922); */
+    min-height: 42px;
+}
     .select2-container--default .select2-selection--multiple .select2-selection__choice {
    
     display: block !important;
     
 }
+.form-wrap ul li {
+    display: table-cell;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    display: inline-block;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #e4e4e4;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block !important;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 0;
+    padding-left: 20px;
+    position: relative;
+    max-width: 23%;
+    overflow: hidden;
+    /* display: inline !important; */
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+td {
+    border:1px solid #dedede;
+}
+.table th:nth-child(1), .table td:nth-child(1) { width: 100px; } /* Profile */
+        .table th:nth-child(2), .table td:nth-child(2) { min-width: 200px; } /* Account */
+        .table th:nth-child(3), .table td:nth-child(3) { min-width: 200px; } /* Analyst */
+        .table th:nth-child(4), .table td:nth-child(4) { min-width: 200px; } /* Last 30 Spend */
+        .table th:nth-child(5), .table td:nth-child(5) { min-width: 200px; } /* Click When Launched */
+        .table th:nth-child(6), .table td:nth-child(6) { min-width: 200px; } /* Perf Chk */
+        .table th:nth-child(7), .table td:nth-child(7) { min-width: 200px; } /* KW Analysis */
+        .table th:nth-child(8), .table td:nth-child(8) { min-width: 200px; } /* Highlights Emailed */
 </style>
 
 <?php include_once("common/head.php") ?>
@@ -87,27 +134,54 @@ if (isset($_SESSION['name'])) {
                                         <thead>
                                             <tr>
                                                 <th>Account</th>
-                                                <th>Analyst</th>
+                                                <th >Analyst</th>
                                                 <th>On-site <br> Maintinance <br> Performed</th>
-                                                <th>Account <br>Review</th>
-                                                <th>Keyword <br>Research</th>
-                                                <th>Intro <br>Call</th>
-                                                <th>Analytics <br>Tracking</th>
-                                                <th>Campaign <br>Deliverable<br> Audit<br> Performed</th>
-                                                <th>KW<br> Approval</th>
-                                                <th>Report<br> Creation</th>
-                                                <th>Monthly<br> Followup</th>
+                                                <th>Account Review</th>
+                                                <th>Keyword Research</th>
+                                                <th>Intro Call</th>
+                                                <th>Analytics Tracking</th>
+                                                <th>Campaign Deliverable<br> Audit Performed</th>
+                                                <th>KW Approval</th>
+                                                <th>Report Creation</th>
+                                                <th>Monthly Followup</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>Tiger Nixon</td>
                                                 <td>System Architect</td>
-                                                <td><form><div class="row"><div class="col-6 p-0 m-0">
+                                                <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
 
 <input type="text" name="" class="form-control">
 </div>
-<div class="col-6 p-0 m-0">
+<div class="p-0 m-0">
+                                       <div class="form-wrap">
+<select class="multiple-img" multiple  name="user_assign[]" >
+   <option data-image="assets/img/flags/flag_green.png" value="1"></option>
+   <option data-image="assets/img/flags/flag_red.png" value="1"></option>
+   <option data-image="assets/img/flags/maintinance.png" value="1"></option>
+   <option data-image="assets/img/flags/danger.png" value="1"></option>
+</select>
+
+</div></div></div></form></td>
+                                                <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
+
+<input type="text" name="" class="form-control">
+</div>
+<div class="p-0 m-0">
+                                       <div class="form-wrap">
+<select class="multiple-img" multiple  name="user_assign[]" >
+   <option data-image="assets/img/flags/flag_green.png" value="1" ></option>
+   <option data-image="assets/img/flags/flag_red.png" value="1"></option>
+   <option data-image="assets/img/flags/maintinance.png" value="1"></option>
+   <option data-image="assets/img/flags/danger.png" value="1"></option>
+</select>
+</div></div></div></form></td>
+                                                <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
+
+<input type="text" name="" class="form-control">
+</div>
+<div class="p-0 m-0">
                                        <div class="form-wrap">
 <select class="multiple-img" multiple  name="user_assign[]" >
    <option data-image="assets/img/flags/flag_green.png" value="1"></option>
@@ -116,52 +190,11 @@ if (isset($_SESSION['name'])) {
    <option data-image="assets/img/flags/danger.png" value="1"></option>
 </select>
 </div></div></div></form></td>
-                                                <td><form><div class="row"><div class="col-6 p-0 m-0">
+                                                 <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
 
 <input type="text" name="" class="form-control">
 </div>
-<div class="col-6 p-0 m-0">
-                                       <div class="form-wrap">
-<select class="multiple-img" multiple  name="user_assign[]" >
-   <option data-image="assets/img/flags/flag_green.png" value="1"></option>
-   <option data-image="assets/img/flags/flag_red.png" value="1"></option>
-   <option data-image="assets/img/flags/maintinance.png" value="1"></option>
-   <option data-image="assets/img/flags/danger.png" value="1"></option>
-</select>
-</div></div></div></form></td>
-                                                <td><form><div class="row"><div class="col-6 p-0 m-0">
-
-<input type="text" name="" class="form-control">
-</div>
-<div class="col-6 p-0 m-0">
-                                       <div class="form-wrap">
-<select class="multiple-img" multiple  name="user_assign[]" >
-   <option data-image="assets/img/flags/flag_green.png" value="1"></option>
-   <option data-image="assets/img/flags/flag_red.png" value="1"></option>
-   <option data-image="assets/img/flags/maintinance.png" value="1"></option>
-   <option data-image="assets/img/flags/danger.png" value="1"></option>
-</select>
-</div></div></div></form></td>
-                                                <td><form><div class="row"><div class="col-6 p-0 m-0">
-
-<input type="text" name="" class="form-control">
-</div>
-<div class="col-6 p-0 m-0">
-                                       <div class="form-wrap">
-<select class="multiple-img" multiple  name="user_assign[]" >
-   <option data-image="assets/img/flags/flag_green.png" value="1"></option>
-   <option data-image="assets/img/flags/flag_red.png" value="1"></option>
-   <option data-image="assets/img/flags/maintinance.png" value="1"></option>
-   <option data-image="assets/img/flags/danger.png" value="1"></option>
-</select>
-</div></div></div></form></td>
-
-
-<td><form><div class="row"><div class="col-6 p-0 m-0">
-
-<input type="text" name="" class="form-control">
-</div>
-<div class="col-6 p-0 m-0">
+<div class="p-0 m-0">
                                        <div class="form-wrap">
 <select class="multiple-img" multiple  name="user_assign[]" >
    <option data-image="assets/img/flags/flag_green.png" value="1"></option>
@@ -172,12 +205,11 @@ if (isset($_SESSION['name'])) {
 </div></div></div></form></td>
 
 
-
-<td><form><div class="row"><div class="col-6 p-0 m-0">
+ <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
 
 <input type="text" name="" class="form-control">
 </div>
-<div class="col-6 p-0 m-0">
+<div class="p-0 m-0">
                                        <div class="form-wrap">
 <select class="multiple-img" multiple  name="user_assign[]" >
    <option data-image="assets/img/flags/flag_green.png" value="1"></option>
@@ -189,11 +221,11 @@ if (isset($_SESSION['name'])) {
 
 
 
-<td><form><div class="row"><div class="col-6 p-0 m-0">
+ <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
 
 <input type="text" name="" class="form-control">
 </div>
-<div class="col-6 p-0 m-0">
+<div class="p-0 m-0">
                                        <div class="form-wrap">
 <select class="multiple-img" multiple  name="user_assign[]" >
    <option data-image="assets/img/flags/flag_green.png" value="1"></option>
@@ -205,11 +237,11 @@ if (isset($_SESSION['name'])) {
 
 
 
-<td><form><div class="row"><div class="col-6 p-0 m-0">
+ <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
 
 <input type="text" name="" class="form-control">
 </div>
-<div class="col-6 p-0 m-0">
+<div class="p-0 m-0">
                                        <div class="form-wrap">
 <select class="multiple-img" multiple  name="user_assign[]" >
    <option data-image="assets/img/flags/flag_green.png" value="1"></option>
@@ -219,6 +251,40 @@ if (isset($_SESSION['name'])) {
 </select>
 </div></div></div></form></td>
 
+
+
+ <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
+
+<input type="text" name="" class="form-control">
+</div>
+<div class="p-0 m-0">
+                                       <div class="form-wrap">
+<select class="multiple-img" multiple  name="user_assign[]" >
+   <option data-image="assets/img/flags/flag_green.png" value="1"></option>
+   <option data-image="assets/img/flags/flag_red.png" value="1"></option>
+   <option data-image="assets/img/flags/maintinance.png" value="1"></option>
+   <option data-image="assets/img/flags/danger.png" value="1"></option>
+</select>
+</div></div></div></form></td>
+
+
+
+
+
+
+ <td><form><div class="row p-0 m-0"><div class="col-6 mx-auto p-0 m-0">
+
+<input type="text" name="" class="form-control">
+</div>
+<div class="p-0 m-0">
+                                       <div class="form-wrap">
+<select class="multiple-img" multiple  name="user_assign[]" >
+   <option data-image="assets/img/flags/flag_green.png" value="1"></option>
+   <option data-image="assets/img/flags/flag_red.png" value="1"></option>
+   <option data-image="assets/img/flags/maintinance.png" value="1"></option>
+   <option data-image="assets/img/flags/danger.png" value="1"></option>
+</select>
+</div></div></div></form></td>
 
 
                                             </tr>
