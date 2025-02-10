@@ -120,7 +120,7 @@ include_once("php/config.php");  ?>
 <h5><?=$row["title"]?></h5>
 <p>Project Id :<?=$row["task_ticket"]?></p>
 <span class="priority badge badge-tag badge-danger-light"><i class="ti ti-square-rounded-filled"></i><?=$row["priority"]?></span>
-<span class="badge badge-pill badge-status bg-success"><?=$row["status"]?></span>
+<span class="badge badge-pill badge-status bg-success1"><?=$row["status"]?></span>
 </div>
 </div>
 <div class="contacts-action">
@@ -331,7 +331,7 @@ while($emp = mysqli_fetch_assoc($redult)) {
 <h6>Projectneonals teyys.xls</h6>
 <p>4.25 MB</p>
 <div class="progress">
-<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+<div class="progress-bar bg-success1" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 <p class="black-text">45%</p>
 </div>

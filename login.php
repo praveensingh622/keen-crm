@@ -92,50 +92,48 @@ if (isset($_GET['status'])) {
 
 </form>
 <?php
+session_start();
+
+
 if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$password = $_POST['password'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-	
-	$sql = "SELECT * FROM admin WHERE email = '$email' || username = '$email' && password='$password'";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	$num = mysqli_num_rows($result);
-	$check_acit = $row["status"];
-	
 
-	if ($row["role"]==1) {
-		if($check_acit == "Active"){
-		session_start();
-		$_SESSION['name']= $row["name"];
-		$_SESSION['email'] = $row["email"];
-		$_SESSION['admin'] = $row["name"];
-		$_SESSION['user_id'] = $row["id"];
-		$_SESSION['profile_pic'] = $row["profile"];
-		$_SESSION['job_title'] = $row["job_title"];
-		header("Location:index.php");
-	} else{
-	header("Location:login.php?status=402");
-};
-}
-	elseif ($row["role"]==2) {
-		if($check_acit == "Active"){
-		session_start();
-		$_SESSION['name']= $row["name"];
-		$_SESSION['email'] = $row["email"];
-		$_SESSION['user_id'] = $row["id"];
-		$_SESSION['profile_pic'] = $row["profile"];
-		header("Location:employee/index.php");
-	}
-	else{
-	header("Location:login.php?status=402");
-};
-	
-}
+    $sql = "SELECT * FROM admin WHERE email = ? OR username = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
 
-else{
-		header("Location:login.php?status=401");
-	};
+    if ($row) {
+
+        if (password_verify($password, $row['password'])) {
+            if ($row["status"] == "Active") {
+                // Set session variables
+                $_SESSION['name'] = $row["name"];
+                $_SESSION['email'] = $row["email"];
+                $_SESSION['user_id'] = $row["id"];
+                $_SESSION['profile_pic'] = $row["profile"];
+
+                // Redirect based on role
+                if ($row["role"] == 1) {
+                    $_SESSION['admin'] = $row["name"];
+                    $_SESSION['job_title'] = $row["job_title"];
+                    header("Location: index.php");
+                } elseif ($row["role"] == 2) {
+                    header("Location: employee/index.php");
+                }
+            } else {
+                header("Location: login.php?status=402"); 
+            }
+        } else {
+            header("Location: login.php?status=401"); 
+        }
+    } else {
+        header("Location: login.php?status=401"); 
+    }
 }
 ?>
 </div>

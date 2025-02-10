@@ -276,19 +276,21 @@ if (isset($_POST['submit'])) {
 </html>';
 
 
-function base_url() {
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
-    return $protocol . "://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . "/";
-}
+// function base_url() {
+//     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+//     return $protocol . "://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . "/";
+// }
 
 
 
-function make_image_urls_absolute($content, $base_url) {
+// function make_image_urls_absolute($content, $base_url) {
    
-    return preg_replace('/src="(?!http)([^"]+)"/', 'src="' . $base_url . '/$1"', $content);
-}
-$base_url = base_url();
-$description = make_image_urls_absolute($description, $base_url);
+//     return preg_replace('/src="(?!http)([^"]+)"/', 'src="' . $base_url . '/$1"', $content);
+// }
+// $base_url = base_url();
+// $description = make_image_urls_absolute($description, $base_url);
+
+$base_url= "https://login.php";
    
    $date = date("d-m-Y");
 

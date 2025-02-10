@@ -42,7 +42,7 @@ if (isset($_POST['input'])) {
 	</ul>
 </td>
 <td>
-	<span class="badge badge-pill badge-status bg-success"><?php echo $row["status"] ?></span>
+	<span class="badge badge-pill badge-status bg-success1"><?php echo $row["status"] ?></span>
 </td>
 <td>
 	<div class="dropdown table-action">

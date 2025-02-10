@@ -149,7 +149,7 @@ echo $total_panel;
 		
 		
 		<td><ul class="social-links d-flex align-items-center"><li><a href="#"><i class="ti ti-mail"></i></a></li><li><a href="#"><i class="ti ti-phone-check"></i></a></li><li><a href="#"><i class="ti ti-message-circle-share"></i></a></li><li><a href="#"><i class="ti ti-brand-skype"></i></a></li><li><a href="#"><i class="ti ti-brand-facebook "></i></a></li></ul></td>
-		<td><span class="badge badge-pill badge-status bg-success">Active</span></td>
+		<td><span class="badge badge-pill badge-status bg-success1">Active</span></td>
 		<td>
 			<div class="dropdown table-action">
 				<a href="#" class="action-icon " data-bs-toggle="dropdown" aria-expanded="false">
@@ -912,27 +912,27 @@ if ($num>0) {
 <script type="text/javascript">
     $(document).ready(function () {
         $('#edit-po').on('show.bs.modal', function (e) {
-            // ✅ PHP se fetched value ko JS me lena
+           
             var subrole = $(e.relatedTarget).data('subrole');
 
-            console.log("Subrole Value:", subrole); // Debugging ke liye check karein
+            console.log("Subrole Value:", subrole); 
 
-            // ✅ Checkbox ko set karna (1 -> Checked, 0 -> Unchecked)
+            
             $('#subroleCheckbox').prop('checked', subrole == 1);
 
-            // ✅ Subrole Status ko text me dikhana
+            
             $('#subroleText').text(subrole == 1 ? "Enabled" : "Disabled");
 
-            // ✅ Event Binding: Directly bind change event
+           
             $('#subroleCheckbox').on('change', function () {
-                var newSubrole = this.checked ? 1 : 0;  // Update subrole on change
+                var newSubrole = this.checked ? 1 : 0; 
                 console.log("Updated Subrole Value:", newSubrole);
 
-                // ✅ Update Text after change
+               
                 $('#subroleText').text(newSubrole == 1 ? "Enabled" : "Disabled");
 
-                // ✅ Update the value for further processing (if needed)
-                $(this).val(newSubrole);  // Change value to reflect the checkbox state
+                
+                $(this).val(newSubrole); 
             });
         });
     });

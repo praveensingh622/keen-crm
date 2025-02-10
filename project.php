@@ -664,7 +664,7 @@ echo $clitiprow["company"];
 		<td><?= $row["project_type"]?></td>
 		
 		<td>
-			<span class="badge badge-pill badge-status bg-success"><?= $row["status"]?></span>
+			<span class="badge badge-pill badge-status bg-success1"><?= $row["status"]?></span>
 		</td>
 		<td>
 			<div class="dropdown table-action">

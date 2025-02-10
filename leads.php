@@ -224,7 +224,7 @@ if (mysqli_num_rows($result)>0) {
 	<td><?php echo $row["leads_company_name"] ?></td>
 	<td><?php echo $row["leads_phone"] ?></td>
 	<td><?php echo $row["leads_email"] ?></td>
-	<td><span class="badge badge-pill badge-status bg-success"><?php echo $row["leads_status"] ?></span></td>
+	<td><span class="badge badge-pill badge-status bg-success1"><?php echo $row["leads_status"] ?></span></td>
 	<td><?php echo $row["leads_date"] ?></td>
 	<td><span class="title-name"><?php echo $row["leads_owner"] ?></span></td>
 	<td><div class="dropdown table-action"><a href="#" class="action-icon " data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>

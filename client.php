@@ -155,6 +155,7 @@ echo $total_panel;
 <th>Email</th>
 <th>Owner</th>
 <th>Contact </th>
+<th>Invitation</th>
 <th>Status</th>
 <th class="text-end">Action</th>
 </tr>
@@ -205,8 +206,9 @@ if (mysqli_num_rows($result)>0) {
 		<li><a href="#"><i class="ti ti-brand-facebook "></i></a></li>
 	</ul>
 </td>
+<td><a href="php/client-invitation-email-first-time.php?email=<?=$row["email"]?>&name=<?=$row["username"]?>">Send </a></td>
 <td>
-	<span class="badge badge-pill badge-status bg-success"><?php echo $row["status"] ?></span>
+	<span class="badge badge-pill badge-status bg-success1"><?php echo $row["status"] ?></span>
 </td>
 <td>
 	<div class="dropdown table-action">

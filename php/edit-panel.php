@@ -50,6 +50,7 @@ if (isset($_POST['submit'])) {
     $lname = $_POST['lname'];
     $username = $_POST["username"];
     $password = $_POST['password'];
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
     $job_title = $_POST['jobtitle'] ?? '';
     $fax = $_POST['fax'] ?? '';
     $email = $_POST['email'] ?? '';
@@ -69,22 +70,21 @@ if (isset($_POST['submit'])) {
     $whatsapp = $_POST['whatsapp'] ?? '';
     $instagram = $_POST['instagram'] ?? '';
     $role = $_POST['role'] ?? '';
-    $subrole = $_POST['subrole'] ?? ''; // ✅ Subrole Add Kiya
+    $subrole = $_POST['subrole'] ?? ''; 
     $user_ids = $_POST['user_id'];
     $status = $_POST['status'] ?? '';
 
   
     if (!empty($_FILES['image']['name'])) {
-        $target_dir = "uploads/"; // ✅ Upload Folder
+        $target_dir = "uploads/"; 
         $image = basename($_FILES["image"]["name"]);
         $target_file = $target_dir . $image;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        // ✅ Allow Only JPG, JPEG, PNG
         $allowed = array("jpg", "jpeg", "png");
         if (in_array($imageFileType, $allowed)) {
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                // ✅ Successfully Uploaded
+               
             } else {
                 echo "Image upload failed!";
                 exit;
@@ -95,12 +95,12 @@ if (isset($_POST['submit'])) {
         }
 
 
-         // ✅ Update Query with Image & Subrole
+      
     $sql = "UPDATE `admin` SET 
         `name` = '$fname', 
         `lname` = '$lname', 
         `username` = '$username', 
-        `password` = '$password', 
+        `password` = '$hashed_password', 
         `email` = '$email', 
         `skype` = '$skype', 
         `phone` = '$phone', 
@@ -113,8 +113,8 @@ if (isset($_POST['submit'])) {
         `state` = '$state', 
         `zipcode` = '$zipcode', 
         `status`='$status',
-        `subrole`='$subrole',  -- ✅ Subrole Add Kiya
-        `profile`='$target_file'       -- ✅ Image Add Kiya
+        `subrole`='$subrole',  
+        `profile`='$target_file'      
         WHERE `admin`.`id` = '$user_ids'";
 
     $result = mysqli_query($conn, $sql);
@@ -125,7 +125,7 @@ if (isset($_POST['submit'])) {
     };
     } 
 
-    $sql = "UPDATE `admin` SET `name` = '$fname', `lname` = '$lname', `username` = '$username', `password` = '$password', `email` = '$email', `skype` = '$skype', `phone` = '$phone', `job_title` = '$job_title', `phone2` = '$phone1', `fax` = '$fax', `description` = '$description', `street` = '$street', `city` = '$city', `state` = '$state', `zipcode` = '$zipcode', `status`='$status' WHERE `admin`.`id` = '$user_ids'";
+    $sql = "UPDATE `admin` SET `name` = '$fname', `lname` = '$lname', `username` = '$username', `password` = '$hashed_password', `email` = '$email', `skype` = '$skype', `phone` = '$phone', `job_title` = '$job_title', `phone2` = '$phone1', `fax` = '$fax', `description` = '$description', `street` = '$street', `city` = '$city', `state` = '$state', `zipcode` = '$zipcode', `status`='$status' WHERE `admin`.`id` = '$user_ids'";
 
     $result = mysqli_query($conn, $sql);
     if ($result) {
